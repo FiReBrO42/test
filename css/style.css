@@ -5237,6 +5237,16 @@ a[data-fancybox] img {
         transform: scale(10);
     }
 }
+@keyframes loading-hide {
+    0%{
+        display: block;
+        opacity: 1;
+    }
+    100% {
+        display: block;
+        opacity: 0;
+    }
+}
 /* JS  */
 .js-ham_menu_ani {
     display: none;

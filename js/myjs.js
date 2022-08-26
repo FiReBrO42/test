@@ -1,4 +1,7 @@
 $(function () {
+    setTimeout(() => {
+        $('#loading_mask_svg').removeClass('ani_loadging')
+        }, 1000);   
 /* click */
     $('.top_header_logo_link').on("click",function(){
         $('.active-trail_1').removeClass('active');
@@ -169,9 +172,9 @@ $(function () {
 window.onload= showfadein;
 function showfadein (){
 /* SVG讀取動畫 */
-setTimeout(() => {
+/* setTimeout(() => {
     $('#loading_mask_svg').removeClass('ani_loadging')
-    }, 1000);        
+    }, 1000);      */   
 
 /* 中間logo 小字 */
 setTimeout(() => {
