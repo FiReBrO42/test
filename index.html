@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>TOP TIME極速時刻賽車模擬器</title>
+    <!-- CSS slick 輪播圖 -->
+    <link rel="stylesheet" href="./css/slick.css"/>
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <!-- CSS fancybox -->
+    <link rel="stylesheet" href="./css/fancybox.css"/>
+    <!-- CSS swiper -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <!-- 自訂意CSS-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body >
+    <div id="loading_mask_svg" class="loading_mask_svg ani_loadging"><!-- 讀取動畫  js 一秒後隱藏 -->
+        <img src="./img/svg/v-shape.svg" alt="v-shape.svg"><!-- 替換檔案 即可  -->
+    </div>
+    <header id="top_header" class="top_header"><!-- menu -->
+        <nav id="ham-menu" class="top_ham_menu_nav js-ham_menu_ani"><!-- ham-menu -->
+            <div class="top_ham_menu_nav_sub_wrapper">
+                <ul class="top_ham_menu_nav_sub top_ham_menu_nav_sub_hide">
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="about" href="./about.html">品牌</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="Calendar" href="./calendar.html">賽事</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="media" href="./media.html">媒體</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="news" href="./news.html">消息</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="top_ham_menu_link_wrapper"> <!-- ham-menu socail icon-->
+                <a href="#" class="top_ham_menu_link">
+                    <ion-icon name="logo-instagram" class="top_ham_menu_link_icon"></ion-icon>
+                </a>
+                <a href="#" class="top_ham_menu_link">
+                    <ion-icon name="logo-twitter" class="top_ham_menu_link_icon"></ion-icon>
+                </a>
+                <a href="#" class="top_ham_menu_link">
+                    <svg class="top_ham_menu_link_icon"  fill="#FFFDFD" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                        <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+        <div class="top_header_logo_wrapper"><!-- LOGO -->
+            <a href="./index.html" class="top_header_logo_link">
+                <h1 class="top_header_logo">
+                    <img src="./img/svg/icon-logo.svg" alt="LOGO">
+                </h1>
+            </a>
+        </div>
+        <nav id="main-menu" class="top_header_menu_wrapper" ><!-- 主要menu -->
+            <ul class="top_header_menu_list_Wrapper">
+                <li class="top_header_menu_list">
+                    <a href="./about.html" class="active-trail_1">品牌</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./calendar.html" class="active-trail_2">賽事</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./media.html" class="active-trail_3">媒體</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./news.html" class="active-trail_4">消息</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="top_header_link_wrapper"><!-- 社群連結 -->
+            <a href="#" class="top_header_link">
+                <ion-icon name="logo-instagram" class="top_header_link_icon"></ion-icon>
+            </a>
+            
+            <a href="https://www.facebook.com/TopTime.Racing" class="top_header_link">
+                <svg class="top_header_link_icon"  fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                    <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                </svg>
+            </a>
+        </div>
+        <div  class="top_header_ham_menu_btn_wrapper "  id="ham-menu-btn"><!-- ham-menu switch btn -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+    <main id="swup" class="transition-fade"><!-- 內容區域 js-swup -->
+        <section class="top_1">
+            <div class="top_1_bg_mask"></div>
+            <div class="top_1_video_wrapper"><!-- 背景影片 -->
+                <video id="intro-video" class="top_1_video" width="1280" height="720" preload="true" autoplay="true" loop="true" muted="true" playsinline="true">
+                    <source src="./img/home/FREDERIK-VESTI-HERO_v2.mp4">
+                </video>
+            </div>
+            <div class="top_1_caption_wrapper">
+                <div class="top_1_caption_title_wrapper"><!--檔名ani_logo.svg ，動畫是作用在這個SVG檔案本身 ，svg 需添加 id="logo_svg"-->
+                    <img id="logo_svg" src="./img/svg/ani_logo.svg" alt="ani_logo.svg">
+                </div>
+                <div class="top_1_caption_txt_wrapper"><!-- logo小字 -->
+                    <h2 class="top_1_caption_txt hide_opacity">極速時刻賽車模擬器</h2>
+                </div>
+            </div>
+        </section>
+        <section class="top_2">
+            <div class="top_2_container">
+                <div class="swiper mySwiper"><!-- 滑動圖 js-swiper 於底部js initialSlide 調整一開始顯示第幾個-->
+                    <div class="swiper-wrapper">
+                        
+                       
+                     
+                        <div class="swiper-slide ing"><!-- 下一場 區塊  ING 上下動畫 -->
+                            <a href="./calendar-1.html" class="swiper_contain_link"><!-- 連結 -->
+                                <div class="swiper_contain_ing_title"><!-- 最上方小字 -->
+                                    下一場賽事
+                                </div>
+                                <div class="swiper_contain_ing_line"></div>
+                                <p class="swiper_contain_toptxt"><!-- 小字 -->
+                                    TOP TIME 
+                                    <br> 慶開幕獎金挑戰賽
+                                </p>
+                                <h2 class="swiper_contain_titile"><!-- 標題 -->
+                                    台灣麗寶賽道 
+                                    <div class="swiper_contain_titile_flag_wrapper"><!-- 國旗 -->
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-tw.png" alt="flag-tw.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">2022/7/31～8/31</p><!-- 日期 -->
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-spielberg.png" alt="track-spielberg.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper"><!-- 底部hover按鈕 -->
+                                    <div class="swiper_contain_btn btn_hover"><!-- hover版 -->
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular"><!-- 正常版 -->
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                      
+                     
+                         
+                         <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link"><!-- 連結 -->
+                                <p class="swiper_contain_toptxt"><!-- 小字 -->
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile"><!-- 標題 -->
+                                    Le Castellet 
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-fr.png" alt="flag-fr.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">22 - 24 July, 2022</p><!-- 日期 -->
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-le-castellet.png" alt="track-le-castellet.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper"><!-- 底部hove按鈕 -->
+                                    <div class="swiper_contain_btn btn_hover"><!-- hover版 -->
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular"><!-- 正常版 -->
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link">
+                                <p class="swiper_contain_toptxt">
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile">
+                                    Budapest
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-hu.png" alt="flag-hu.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">29 - 31 July, 2022</p>
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-budapest.png" alt="track-budapest.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper">
+                                    <div class="swiper_contain_btn btn_hover">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link">
+                                <p class="swiper_contain_toptxt">
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile">
+                                    Spa-Francorchamps
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-be.png" alt="flag-be.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">26 - 28 August, 2022</p>
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-spa-francorchamps.png" alt="track-spa-francorchamps.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper">
+                                    <div class="swiper_contain_btn btn_hover">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link">
+                                <p class="swiper_contain_toptxt">
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile">
+                                    Zandvoort
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-nl.png" alt="flag-nl.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">02 - 04 September, 2022</p>
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-zandvoort.png" alt="track-zandvoort.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper">
+                                    <div class="swiper_contain_btn btn_hover">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link">
+                                <p class="swiper_contain_toptxt">
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile">
+                                    Monza
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-it.png" alt="flag-it.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">09 - 11 September, 2022</p>
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/track-monza.png" alt="track-monza.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper">
+                                    <div class="swiper_contain_btn btn_hover">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><!-- 正常版 區塊 -->
+                            <a href="#" class="swiper_contain_link">
+                                <p class="swiper_contain_toptxt">
+                                    FIA Formula 2 
+                                    <br> Championship: Round 9
+                                </p>
+                                <h2 class="swiper_contain_titile">
+                                    Yas Island
+                                    <div class="swiper_contain_titile_flag_wrapper">
+                                        <img class="swiper_contain_titile_flag" src="./img/flag/flag-uae.png" alt="flag-uae.png">
+                                    </div>
+                                </h2>
+                                <p class="swiper_contain_sub">18 - 20 November, 2022</p>
+                                <div class="swiper_contain_img_wrapper">
+                                    <img src="./img/home/Bane_streg_YAS_ISLAND.png" alt="Bane_streg_YAS_ISLAND.png">
+                                </div>
+                                <div class="swiper_contain_btn_wrapper">
+                                    <div class="swiper_contain_btn btn_hover">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg class="swiper_contain_btn_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                            </svg>
+                                        </div>  
+                                    </div>
+                                    <div class="swiper_contain_btn btn_regular">
+                                        <span class="swiper_contain_btn_txt">賽事詳情</span>
+                                        <div class="swiper_contain_btn_icon_wrapper">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                            </svg>  
+                                        </div>  
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div><!-- swiper的滾條 -->
+                </div>
+            </div>
+        </section> 
+        <section class="top_3">
+            <div class="top_3_img_wrapper">
+                <img id="move_img" class="top_3_img_1" src="./img/home/home_img01.jpg" alt="home_img01.jpg"><!-- 背景圖 根據滾動距離橫向移動 -->
+                <img class="top_3_img_2" src="./img/svg/v-overlay.svg" alt="v-overlay.svg"><!-- 背景遮罩圖 -->
+            </div>
+            <div class="top_3_contain_wrapper"><!-- 內容 -->
+                <div class="top_3_contain">
+                    <h1 class="top_3_contain_title">TOP TIME</h1><!--  -->
+                    <p class="top_3_contain_txt">Top Time 極速時刻賽車模擬器 品牌Slogan：勇於挑戰，超越極限！ 品牌使命：透過虛擬與實體賽車體驗與競速，建立賽道愛好者交流平台並推動賽車運動產業正向成長。</p>
+                    <div class="btn_arrow_contain_wrapper "><!-- 按鈕 -->
+                        <a href="./about.html" class="btn_arrow_contain_link" >
+                            <div class="btn_arrow_contain btn_hover"><!-- hover版 -->
+                                <span class="btn_arrow_contain_txt">關於TOP TIME</span>
+                                <div class="btn_arrow_contain_icon_wrapper">
+                                    <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                    </svg>
+                                </div>  
+                            </div>
+                            <div class="btn_arrow_contain btn_regular"><!-- 正常版 -->
+                                <span class="btn_arrow_contain_txt">關於TOP TIME</span>
+                                <div class="btn_arrow_contain_icon_wrapper">
+                                    <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                    </svg>  
+                                </div>  
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="top_4">
+            <figure class="top_4_bg_img_wrapper"><!-- 背景圖 -->
+                <img class="top_4_bg_img" src="./img/svg/curve-shape.svg" alt="curve-shape.svg">
+            </figure>
+            <ul class="top_4_list_wrapper"><!-- 無限輪播圖 -->
+                <li class="top_4_list">
+                    <figure class="top_4_list_img_wrapper"><!-- 圖片容器 -->
+                        <img class="top_4_list_img" src="./img/slick1/slick_1_img01.jpg" alt="slick_1_img01.jpg"><!-- 圖片 -->
+                    </figure>
+                </li>
+                <li class="top_4_list">
+                    <figure class="top_4_list_img_wrapper">
+                        <img class="top_4_list_img" src="./img/slick1/slick_1_img02.jpg" alt="slick_1_img02.jpg">
+                    </figure>
+                </li>
+                <li class="top_4_list">
+                    <figure class="top_4_list_img_wrapper">
+                        <img class="top_4_list_img" src="./img/slick1/slick_1_img03.jpg" alt="slick_1_img03.jpg">
+                    </figure>
+                </li>
+                <li class="top_4_list">
+                    <figure class="top_4_list_img_wrapper">
+                        <img class="top_4_list_img" src="./img/slick1/slick_1_img04.jpg" alt="slick_1_img04.jpg">
+                    </figure>
+                </li>
+                <li class="top_4_list">
+                    <figure class="top_4_list_img_wrapper">
+                        <img class="top_4_list_img" src="./img/slick1/slick_1_img05.jpg" alt="slick_1_img05.jpg">
+                    </figure>
+                </li>
+            </ul>
+            <div class="btn_arrow_contain_wrapper "><!-- 按鈕 -->
+                <a href="./media.html" class="btn_arrow_contain_link" >
+                    <div class="btn_arrow_contain btn_hover"><!-- hover版 -->
+                        <span class="btn_arrow_contain_txt">前往媒體庫</span>
+                        <div class="btn_arrow_contain_icon_wrapper">
+                            <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                            </svg>
+                        </div>  
+                    </div>
+                    <div class="btn_arrow_contain btn_regular"><!-- 正常版 -->
+                        <span class="btn_arrow_contain_txt">前往媒體庫</span>
+                        <div class="btn_arrow_contain_icon_wrapper">
+                            <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                            </svg>  
+                        </div>  
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section class="top_5">
+  
+            <div class="bg-pattern"></div><!-- 背景圖 -->
+        </section>
+        <section class="top_6">
+            <div class="top_6_center">
+                <div class="top_6_title_wrapper"><!-- 頂部字 -->
+                    <h2 class="top_6_title">媒體圖庫</h2>
+                    <p class="top_6_title_sub">TOP TIME精選圖庫</p>
+                </div>
+                <div class="top_6_grid_wrapper"><!-- 內容 -->
+                    <div class="top_6_grid"><!-- grid 容器 -->
+                        <div class="top_6_grid_1"><!-- 第一個內容 大圖 2*2-->
+                            <div class="icon-play_wrapper"><!-- 綠色 icon-paly -->
+                                <ion-icon name="play" class="icon-play"></ion-icon>
+                            </div>
+                            <a class="top_6_grid_link" href="./media-1.html"><!-- 連結 -->
+                                <figure class="top_6_grid_img_wrapper"><!-- 圖片 -->
+                                    <img class="top_6_grid_img" src="./img/home/home_grid_img06.jpg" alt="home_grid_img06.jpg">
+                                </figure>
+                                <div class="top_6_grid_top_wrapper"><!-- 頂部字 -->
+                                    <ion-icon name="logo-instagram" class="icon-instagram_white"></ion-icon>
+                                    <p class="top_6_grid_top_txt"> </p>
+                                </div>
+                                <div class="top_6_grid_txt_wrapper"><!-- 底部字 -->
+                                    <p class="top_6_grid_txt">
+                                                 
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="top_6_grid_2"><!-- 第二個內容 小圖 1*1-->
+                            <div class="icon-play_wrapper"><!-- 綠色 icon-paly -->
+                                <ion-icon name="play" class="icon-play"></ion-icon>
+                            </div>
+                            <a class="top_6_grid_link" href="./media.html"><!-- 連結 -->
+                                <figure class="top_6_grid_img_wrapper"><!-- 圖片 -->
+                                    <img class="top_6_grid_img" src="./img/home/home_grid_img07.jpg" alt="home_grid_img07.jpg">
+                                </figure>
+                                <div class="top_6_grid_top_wrapper"><!-- 頂部字 -->
+                                    <ion-icon name="logo-instagram" class="icon-instagram_white"></ion-icon>
+                                    <p class="top_6_grid_top_txt"> </p>
+                                </div>
+                                <div class="top_6_grid_txt_wrapper"><!-- 底部字 -->
+                                    <p class="top_6_grid_txt">
+                                       
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="top_6_grid_3"><!-- 第三個內容 小圖 1*1 -->
+                            <div class="icon-play_wrapper">
+                                <ion-icon name="play" class="icon-play"></ion-icon>
+                            </div>
+                            <a class="top_6_grid_link" href="./media.html">
+                                <figure class="top_6_grid_img_wrapper">
+                                    <img class="top_6_grid_img" src="./img/home/home_grid_img08.jpg" alt="home_grid_img08.jpg">
+                                </figure>
+                                <div class="top_6_grid_top_wrapper">
+                                    <ion-icon name="logo-instagram" class="icon-instagram_white"></ion-icon>
+                                    <p class="top_6_grid_top_txt"> </p>
+                                </div>
+                                <div class="top_6_grid_txt_wrapper">
+                                    <p class="top_6_grid_txt">
+                                                  
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="top_6_btn_wrapper"><!-- 底部連結按鈕 -->
+                    <div class="btn_arrow_contain_wrapper ">
+                        <a href="./media.html" class="btn_arrow_contain_link" >
+                            <div class="btn_arrow_contain btn_hover"><!-- hover版 -->
+                                <span class="btn_arrow_contain_txt">前往媒體圖庫</span>
+                                <div class="btn_arrow_contain_icon_wrapper">
+                                    <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#ffffff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#ffffff"/>
+                                    </svg>
+                                </div>  
+                            </div>
+                            <div class="btn_arrow_contain btn_regular"><!-- 正常版 -->
+                                <span class="btn_arrow_contain_txt">前往媒體圖庫</span>
+                                <div class="btn_arrow_contain_icon_wrapper">
+                                    <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                    </svg>  
+                                </div>  
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-pattern"></div>
+        </section>
+        <section class="top_7">
+            <div class="top_7_center">
+                <div class="top_7_title_wrapper"><!-- 頂部字 -->
+                    <h2 class="top_7_title">消息</h2>
+                    <p class="top_7_title_sub">TOP TIME最新消息</p>
+                    <div class="top_7_link mobile_hide"><!-- 右邊連結按鈕 -->
+                        <a href="./news.html">
+                            <p class="top_7_link_txt">
+                                前往最新消息
+                            </p>
+                            <div class="btn_arrow_contain_icon_wrapper">
+                                <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                </svg>  
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="top_7_contain_wrapper">
+                    <div class="top_7_contain"><!-- 第一內容 -->
+                        <a href="./news-1.html">
+                            <figure class="top_7_contain_img_wrapper"><!-- 圖片 -->
+                                <img src="./img/home/home_img02.jpg" alt="home_img02.jpg">
+                            </figure>
+                        </a>
+                        <div class="top_7_contain_article"><!-- 內容 -->
+                            <p class="top_7_contain_article_txt">2022/07/24</p>
+                            <h2 class="top_7_contain_article_title">TOP TIME 慶開幕</h2><!-- 標題 -->
+                            <p class="top_7_contain_article_sub">開幕花絮</p>
+                            <div class="top_7_link"><!-- 連結 -->
+                                <a href="./news-1.html">
+                                    <p class="top_7_link_txt">
+                                        瞭解更多 
+                                    </p>
+                                    <div class="btn_arrow_contain_icon_wrapper"><!-- 底部hover連結按鈕 -->
+                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                        </svg>  
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_7_contain"><!-- 第二內容 -->
+                        <a href="./news.html">
+                            <figure class="top_7_contain_img_wrapper">
+                                <img src="./img/home/home_img03.jpg" alt="home_img03.jpg">
+                            </figure>
+                        </a>
+                        <div class="top_7_contain_article">
+                            <p class="top_7_contain_article_txt">這是日期</p>
+                            <h2 class="top_7_contain_article_title">這是主標</h2>
+                            <p class="top_7_contain_article_sub">這是副標.</p>
+                            <div class="top_7_link">
+                                <a href="">
+                                    <p class="top_7_link_txt">
+                                       瞭解更多
+                                    </p>
+                                    <div class="btn_arrow_contain_icon_wrapper">
+                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                        </svg>  
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_7_contain"><!-- 第三內容 -->
+                        <a href="./news.html">
+                            <figure class="top_7_contain_img_wrapper">
+                                <img src="./img/home/home_img04.jpg" alt="home_img02.jpg">
+                            </figure>
+                        </a>
+                        <div class="top_7_contain_article">
+                            <p class="top_7_contain_article_txt">這是日期</p>
+                            <h2 class="top_7_contain_article_title">這是主標</h2>
+                            <p class="top_7_contain_article_sub">這是副標.</p>
+                            <div class="top_7_link">
+                                <a href="">
+                                    <p class="top_7_link_txt">
+                                       瞭解更多
+                                    </p>
+                                    <div class="btn_arrow_contain_icon_wrapper">
+                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#fff"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#fff"/>
+                                        </svg>  
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-pattern"></div>
+        </section>
+        <section class="top_8">
+            <div class="top_8_contain_wrapper"><!-- 內容容器 -->
+               
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="home_footer">
+        <div class="home_footer_center_top"><!-- 1280px 上方 -->
+            <div class="home_footer_top">
+                <figure class="home_footer_top_bg"><!-- 背景底圖 -->
+                    <img src="./img/svg/v-shape.svg" alt="v-shape.svg">
+                </figure>
+                <div class="home_footer_logo_wrapper"><!-- 左側logo圖案 -->
+                    <a href="./index.html">
+                        <figure class="home_footer_logo_img_wrapper">
+                                <img class="home_footer_logo" src="./img/svg/icon-footer_logo.svg" alt="icon-footer_logo.svg">
+                        </figure>
+                    </a>
+                </div>
+                <div class="home_footer_center"><!-- 中間內容 -->
+                    <div class="home_footer_contain_wrapper_1"><!-- 第一列 -->
+                        <h2 class="home_footer_contain_title">menu</h2><!-- 標題 -->
+                        <ul class="home_footer_contain_list_wrapper"><!-- menu 連結 -->
+                            <li class="home_footer_contain_list"><!-- 第一行 -->
+                                <a href="./about.html">
+                                    品牌
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list"><!-- 第二行 -->
+                                <a href="./calendar.html">
+                                    賽事
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list">
+                                <a href="./media.html">
+                                    媒體
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list">
+                                <a href="./news.html">
+                                    消息
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                 
+                </div>
+                <div class="home_footer_right"><!-- 右側內容 -->
+                    <h2 class="home_footer_right_title">socail</h2><!-- 標題 -->
+                    <a href="#" class="home_footer_right_link"><!--連結 -->
+                        <ion-icon name="logo-instagram" class="home_footer_right_link_icon"></ion-icon><!-- icon -->
+                        <p>@...</p>
+                    </a>
+                   
+                    <a href="https://www.facebook.com/TopTime.Racing" class="home_footer_right_link">
+                        <svg class="home_footer_right_link_icon"  fill="#fff" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                            <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                        </svg>
+                        <p>@TopTime.Racing</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="home_footer_bottom"><!-- 下方 -->
+            <div class="home_footer_bottom_left_wrapper"><!-- 左側文 -->
+                <small>Copyright2022 &copy; by TOP TIME - All rights reserved</small>
+            </div>
+            <div class="home_footer_bottom_right_wrapper"><!-- 右側文 -->
+                <p class="home_footer_bottom_right_txt">
+                    
+                <a href="#" class="home_footer_bottom_right_link"><!-- 連結icon -->
+                    <figure class="home_footer_bottom_right_img_wrapper"><!-- 圖 -->
+                        
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery原生碼 CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ionicon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- JS smooth 平滑滾動 -->
+    <script src="./js/jquery.nicescroll.js"></script>
+    <!-- JS slick 輪播圖 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- JS swiper -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView : 3.333,
+            slidesPerGroup : 1,
+            initialSlide: 4,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+
+            breakpoints: {
+                320: {  
+                    slidesPerView : 1,
+                    slidesPerGroup : 1,
+                    initialSlide: 1,
+                },
+                768: {  
+                    slidesPerView : 2.222,
+                    slidesPerGroup : 1,
+                    initialSlide: 1,
+                },
+                1024: {  
+                    slidesPerView : 3.333,
+                    slidesPerGroup : 1,
+                    initialSlide: 1,
+                }
+            }
+        });
+    </script>
+    <!-- JS fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>    
+    <!-- 自定義JS -->
+    <script src="./js/myjs.js"></script>
+    <script>
+        /* 圖片位移位置 */
+    var a = document.getElementById('move_img')
+    var a_L = a.offsetLeft;
+
+    window.onscroll = function() {myFunction()};
+
+    function myFunction() {
+        /* 捲動高度 */
+		var y = window.pageYOffset;
+
+        /* 圖片移動 */
+
+        if($(window).width() <= 767){
+            a.style.left = -( a_L + y )/11* 1 + 'px';
+        }
+        else{
+            if($(window).width() >= 768){
+                a.style.left = -( a_L + y )/10* 1 + 'px';
+            }
+            else{
+                if($(window).width() >= 1024){
+                    a.style.left = -( a_L + y )/8* 1 + 'px';
+                }
+                else{
+
+                }
+            }
+        }
+        
+
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-hant-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>TOP TIME</title>
+    <!-- CSS slick 輪播圖 -->
+    <link rel="stylesheet" href="./css/slick.css"/>
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <!-- CSS fancybox -->
+    <link rel="stylesheet" href="./css/fancybox.css"/>
+    <!-- CSS swiper -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <!-- 自訂意CSS-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body >
+    <header id="top_header" class="top_header"><!-- menu -->
+        <nav id="ham-menu" class="top_ham_menu_nav js-ham_menu_ani"><!-- ham-menu -->
+            <div class="top_ham_menu_nav_sub_wrapper">
+                <ul class="top_ham_menu_nav_sub top_ham_menu_nav_sub_hide">
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="about" href="./about.html">品牌</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="Calendar" href="./calendar.html">賽事</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="media" href="./media.html">媒體</a> 
+                    </li>
+                    <li class="top_ham_menu_nav_sub_list">
+                        <a id="news" href="./news.html">消息</a> 
+                    </li>
+                </ul>
+            </div>
+            <div class="top_ham_menu_link_wrapper"> <!-- ham-menu socail icon-->
+                <a href="#" class="top_ham_menu_link">
+                    <ion-icon name="logo-instagram" class="top_ham_menu_link_icon"></ion-icon>
+                </a>
+                
+                <a href="#" class="top_ham_menu_link">
+                    <svg class="top_ham_menu_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                        <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+        <div class="top_header_logo_wrapper"><!-- LOGO -->
+            <a href="./index.html" class="top_header_logo_link">
+                <h1 class="top_header_logo">
+                    <img src="./img/svg/icon-logo.svg" alt="LOGO">
+                </h1>
+            </a>
+        </div>
+        <nav id="main-menu" class="top_header_menu_wrapper" ><!-- 主要menu -->
+            <ul class="top_header_menu_list_Wrapper">
+                <li class="top_header_menu_list">
+                    <a href="./about.html" class="active-trail_1">品牌</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./calendar.html" class="active-trail_2 ">賽事</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./media.html" class="active-trail_3 ">媒體</a>
+                </li>
+                <li class="top_header_menu_list">
+                    <a href="./news.html" class="active-trail_4 active">消息</a><!-- actvie 亮點 -->
+                </li>
+            </ul>
+        </nav>
+        <div class="top_header_link_wrapper"><!-- 社群連結 -->
+            <a href="#" class="top_header_link">
+                <ion-icon name="logo-instagram" class="top_header_link_icon"></ion-icon>
+            </a>
+           
+            <a href="https://www.facebook.com/TopTime.Racing" class="top_header_link">
+                <svg class="top_header_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                    <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                </svg>
+            </a>
+        </div>
+        <div  class="top_header_ham_menu_btn_wrapper "  id="ham-menu-btn"><!-- ham-menu switch btn -->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </header>
+    <main id="swup" class="transition-fade">
+        <section class="news-1_1">
+            <div class="news-1_1_center"><!-- 內文容器 -->
+                <div class="news-1_1_banner"><!-- 頂部圖 -->
+                    <figure class="news-1_1_banner_img_wrapper">
+                        <img src="./img/news/news-1_img01.jpg" alt="news-1_img01.jpg">
+                    </figure>
+                </div>
+                <div class="news-1_1_contain_wrapper"><!-- 內文 -->
+                    <h2 class="news-1_1_contain_date"><!-- 小標日期 -->
+                        NEWS - 04. July 2022        
+                    </h2>
+                    <h1 class="news-1_1_contain_title"><!-- 標題 -->
+                        Strong weekend by Vesti
+                    </h1>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        "The second solid weekend in a row"! This was Danish journalist Jonas Hüttel's take on Vesti's race weekend at English Silverstone.
+                    </p>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        Pretty much spot on if you ask Vesti himself.
+                    </p>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            I picked up more points in Barcelona and was not at the top of the podium this weekend as in Baku, but this weekend has brought consistency back to my races. Something that has eluded me so far. Clearly good things has happened in the last two race weekends.
+                        </p>
+                    </div>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        Vesti was only a good 1/10 second from taking pole for Sunday's feature race. He ended up having to settle for the second fastest time, but an excellent qualifying turned out to be indicative of what awaited. In Saturday's sprint race, we witnessed a Vesti with an aggression, precision and superiority that was lacking at the start of the season.
+                    </p>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            If it looked like I enjoyed what I was doing out there - then a resounding YES! Running an entire race on wet tires with the unpredictability it brings with it and in a race where many tried hard and tricky manoeuvres makes racing the coolest thing in the whole world! I lost positions along the way, but gained more.                        
+                        </p>
+                    </div>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        Frederik's manager, Dorte Riis Madsen, was more than pleased with what she witnessed at Silverstone.
+                    </p>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            The sprint race was some of the very best driving I have seen from Frederik's side. There was man-to-man duels with the best drivers in the field, in which Frederik came out victorious. He challenged, chasing down the combatants ahead of him and took back lost positions. I saw a consistent Frederik racing this weekend and with regained strength - that points to one thing only: lots of confidence, says a satisfied Dorte Riis.                      
+                        </p>
+                    </div>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        In Sunday's feature race, Vesti spun his rear wheels at the start. 4 positions were lost but later regained. Vesti finished P5. Realistically, the speed was there to put Vesti in P4, but a driving mistake on the last lap prevented Vesti from picking up another 2 points.
+                    </p>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            The start ruined the opportunity to take full advantage of my speed. Had I gotten a great start, I would have - in my own head - overtaken Logan Sargeant on pole and never looked back. I am happy with 13 points this weekend, but at the same time I have a feeling of having lost 15 points. A wasted chance. Missing out on a great opportunity that was mine.                   
+                        </p>
+                    </div>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            The teamwork between ART and me was outstanding. But what I take with me from this weekend is the consistency and the feeling of being exactly where I need to be - to be at the forefront for the rest of the season. My foundation is strong. I have gained a lot from the last races and experienced success again - where it is most difficult and I am the most challenged.                    
+                        </p>
+                    </div>
+                    <div class="news-1_1_contain_point"><!-- 內文重點 偽元素標示""  -->
+                        <p class="news-1_1_contain_point_txt">
+                            My "reward" for a good weekend came in the form of some additional hot laps around the track. I was one of the designated drivers of the Mercedes AMG driving some of their VIP F1 guests. I think I might have given them the driving experience of a lifetime (judging by their screams!). On a side note I can highly recommend a Mercedes GTS AMG in your garage, laughs Frederik Vesti.               
+                        </p>
+                    </div>
+                    <p class="news-1_1_contain_txt"><!-- 內文 -->
+                        400,000 spectators at Silverstone will hardly be beaten when F1 and F2 are racing on the Red Bull Ring next weekend. But less will suffice to set the right mood on one of Vesti's favorite circuits and where he has been at the top of the podium several times.
+                    </p>
+                    <figure class="news-1_1_contain_img_wrapper"><!-- 圖片 -->
+                        <img src="./img/news/news-1_img02.jpeg" alt="news-1_img02.jpeg">
+                    </figure>
+                    <figure class="news-1_1_contain_img_wrapper"><!-- 圖片 -->
+                        <img src="./img/news/news-1_img03.jpeg" alt="news-1_img03.jpeg">
+                    </figure>
+                </div>
+            </div>
+        </section>
+        <section class="about_5"><!-- 無限輪播圖 -->
+            <ul class="about_5_list_wrapper">
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img01.png" alt="slick_2_img01.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img02.png" alt="slick_2_img02.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img03.png" alt="slick_2_img03.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img04.png" alt="slick_2_img04.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img05.png" alt="slick_2_img05.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img06.png" alt="slick_2_img06.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img07.png" alt="slick_2_img07.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img08.png" alt="slick_2_img08.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img09.png" alt="slick_2_img09.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img10.png" alt="slick_2_img10.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img11.png" alt="slick_2_img11.png">
+                    </figure>
+                </li>
+                <li class="about_5_list">
+                    <figure class="about_5_list_img_wrapper">
+                        <img class="about_5_list_img" src="./img/slick2/slick_2_img12.png" alt="slick_2_img12.png">
+                    </figure>
+                </li>
+        </section>
+    </main>
+    <footer class="home_footer">
+        <div class="home_footer_center_top">
+            <div class="home_footer_top">
+                <figure class="home_footer_top_bg">
+                    <img src="./img/svg/v-shape.svg" alt="v-shape.svg">
+                </figure>
+                <div class="home_footer_logo_wrapper">
+                    <a href="./index.html">
+                        <figure class="home_footer_logo_img_wrapper">
+                                <img class="home_footer_logo" src="./img/svg/icon-footer_logo.svg" alt="icon-footer_logo.svg">
+                        </figure>
+                    </a>
+                </div>
+                <div class="home_footer_center">
+                    <div class="home_footer_contain_wrapper_1">
+                        <h2 class="home_footer_contain_title">menu</h2>
+                        <ul class="home_footer_contain_list_wrapper">
+                            <li class="home_footer_contain_list">
+                                <a href="./about.html">
+                                    品牌
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list">
+                                <a href="./calendar.html">
+                                    賽事
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list">
+                                <a href="./media.html">
+                                    媒體
+                                </a>
+                            </li>
+                            <li class="home_footer_contain_list">
+                                <a href="./news.html">
+                                    消息
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="home_footer_contain_wrapper_2">
+                        <h2 class="home_footer_contain_title"></h2>
+                        <ul class="home_footer_contain_list_wrapper">
+                            <li class="home_footer_contain_list">
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="home_footer_right">
+                    <h2 class="home_footer_right_title">socail</h2>
+                    <a href="#" class="home_footer_right_link">
+                        <ion-icon name="logo-instagram" class="home_footer_right_link_icon"></ion-icon>
+                        <p>@...</p>
+                    </a>
+                    <a href="#" class="home_footer_right_link">
+                        <ion-icon name="logo-twitter" class="home_footer_right_link_icon"></ion-icon>
+                        <p>@frederik_vesti</p>
+                    </a>
+                    <a href="https://www.facebook.com/TopTime.Racing" class="home_footer_right_link">
+                        <svg class="home_footer_right_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
+                            <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
+                        </svg>
+                        <p>@TopTime.Racing</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="home_footer_bottom">
+            <div class="home_footer_bottom_left_wrapper">
+                <small>Copyright2022 &copy; by TOP TIME - All rights reserved</small>
+            </div>
+            <div class="home_footer_bottom_right_wrapper">
+                <p class="home_footer_bottom_right_txt">
+                     </p>
+                <a href="#" class="home_footer_bottom_right_link">
+                    <figure class="home_footer_bottom_right_img_wrapper">
+                        
+                    </figure>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery原生碼 CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- ionicon -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- JS smooth 平滑滾動 -->
+    <script src="./js/jquery.nicescroll.js"></script>
+    <!-- JS slick 輪播圖 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- JS swiper -->
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView : 3.333,
+            slidesPerGroup : 1,
+            initialSlide: 4,
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+
+            breakpoints: {
+                320: {  
+                    slidesPerView : 1,
+                    slidesPerGroup : 1,
+                    initialSlide: 3,
+                },
+                768: {  
+                    slidesPerView : 2.222,
+                    slidesPerGroup : 1,
+                    initialSlide: 3,
+                },
+                1024: {  
+                    slidesPerView : 3.333,
+                    slidesPerGroup : 1,
+                    initialSlide: 3,
+                }
+            }
+        });
+    </script>
+    <!-- JS fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <!-- 自定義JS -->
+    <script src="./js/myjs.js"></script>
+</body>
+</html>
