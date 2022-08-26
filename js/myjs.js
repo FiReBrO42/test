@@ -1,7 +1,12 @@
 $(function () {
+/* LOADING PAGE */
     setTimeout(() => {
         $('#loading_mask_svg').removeClass('ani_loadging')
         }, 1000);   
+    /* 中間logo 小字 */
+    setTimeout(() => {
+        $('.top_1_caption_txt').removeClass('hide_opacity')
+        }, 1300);
 /* click */
     $('.top_header_logo_link').on("click",function(){
         $('.active-trail_1').removeClass('active');
@@ -168,20 +173,6 @@ $(function () {
     });
     
 });
-
-window.onload= showfadein;
-function showfadein (){
-/* SVG讀取動畫 */
-/* setTimeout(() => {
-    $('#loading_mask_svg').removeClass('ani_loadging')
-    }, 1000);      */   
-
-/* 中間logo 小字 */
-setTimeout(() => {
-    $('.top_1_caption_txt').removeClass('hide_opacity')
-    }, 1300);
-
-};
 
 /* 圖片位移位置 */
     var a = document.getElementById('move_img')
