@@ -58,7 +58,7 @@ Vue.createApp({
           title: '黑小丑',
           imageUrl: '../img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '#',
+          link: '../convertPoints.html',
           number: 'H238-1:2'
         },
         {
@@ -66,7 +66,7 @@ Vue.createApp({
           title: '黑小丑',
           imageUrl: '../img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '#',
+          link: '../convertPoints.html',
           number: 'H238-1:2'
         },
         {
@@ -74,7 +74,7 @@ Vue.createApp({
           title: '黑小丑',
           imageUrl: '../img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '#',
+          link: '../convertPoints.html',
           number: 'H238-1:2'
         },
         {
@@ -82,7 +82,7 @@ Vue.createApp({
           title: '黑小丑',
           imageUrl: '../img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '#',
+          link: '../convertPoints.html',
           number: 'H238-1:2'
         }
 
@@ -128,7 +128,7 @@ Vue.createApp({
       }
     },
     logout() {
-      window.location = '../Login.html'
+      window.location = '../login.html'
     },
     login() {
       window.location = '../index.html'
@@ -142,7 +142,7 @@ Vue.createApp({
       window.history.go(-1);
     },
     toMenu() {
-      window.location = '../Menu.html'
+      window.location = '../menu.html'
     },
     menuBtnOn(name) {
       // 把當前點擊的 item 的 active 設為 true
