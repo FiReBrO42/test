@@ -56,33 +56,33 @@ Vue.createApp({
         {
           category: 'gaming',
           title: '黑小丑',
-          imageUrl: '../img/04_Games/img_game_bg.jpg',
+          imageUrl: './img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '/convertPoints.html',
+          link: './convertPoints.html',
           number: 'H238-1:2'
         },
         {
           category: 'available',
           title: '黑小丑',
-          imageUrl: '/img/04_Games/img_game_bg.jpg',
+          imageUrl: './img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '/convertPoints.html',
+          link: './convertPoints.html',
           number: 'H238-1:2'
         },
         {
           category: 'gaming',
           title: '黑小丑',
-          imageUrl: '/img/04_Games/img_game_bg.jpg',
+          imageUrl: './img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '/convertPoints.html',
+          link: './convertPoints.html',
           number: 'H238-1:2'
         },
         {
           category: 'gaming',
           title: '黑小丑',
-          imageUrl: '/img/04_Games/img_game_bg.jpg',
+          imageUrl: './img/04_Games/img_game_bg.jpg',
           imageAlt: '遊戲機台圖',
-          link: '/convertPoints.html',
+          link: './convertPoints.html',
           number: 'H238-1:2'
         }
 
