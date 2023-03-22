@@ -128,10 +128,10 @@ Vue.createApp({
       }
     },
     logout() {
-      window.location = '../login.html'
+      window.location = './login.html'
     },
     login() {
-      window.location = '../index.html'
+      window.location = './index.html'
     },
     // 規則
     isPhone(value) {
@@ -142,7 +142,7 @@ Vue.createApp({
       window.history.go(-1);
     },
     toMenu() {
-      window.location = '../menu.html'
+      window.location = './menu.html'
     },
     menuBtnOn(name) {
       // 把當前點擊的 item 的 active 設為 true
@@ -165,7 +165,7 @@ Vue.createApp({
             } */
     },
     enterGame() {
-      window.location = '../index.html'
+      window.location = './index.html'
     },
     filterMachine(txt) {
       this.itemProduct = []
