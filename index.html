@@ -38,7 +38,7 @@
                     <div class="top_banner_ham_container">
                         <!-- 更改連結去 all.js 更改該函式 -->
                         <div class="top_banner_btn_ham btn_ham " @click="toMenu"></div>
-                        <div class="top_banner_btn_logout btn_return " @click="returnBack"></div>
+                        <div class="top_banner_btn_logout btn_logout " @click="logout"></div>
                     </div>
                 </header>
                 <!-- 主要內容區 -->
@@ -91,12 +91,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- 中下背景圖 -->
-                    <div class="down_background_container d-grid position-relative">
+                    <!-- 中間拉霸機 -->
+                    <div class="mid_slot_container d-grid position-relative">
                         <!-- 背景圖 -->
-                        <img class="img-fluid" src="./img/07_Register/img_loginbackground.jpg" alt="登入背景圖">
-                        <div >
-                            <img src="./img/07_Register/img_login.png" alt="會員登入標題">
+                        <img class="img-fluid" src="./img/01_Lobby/img_slotbackground.png" alt="拉霸機背景">
+                    </div>
+                    <!-- 底部選單 -->
+                    <div class=" mid_nav_container position-relative">
+                        <!-- 背景圖 -->
+                        <img class="img-fluid" src="./img/01_Lobby/img_menubackground.jpg" alt="選單背景">
+                        <!-- 背景圖屋簷 -->
+                        <div class="mid_nav_container_deco">
+                            <img class="img-fluid" src="./img/01_Lobby/img_partitionframe.png" alt="屋簷">
                         </div>
                     </div>
                     <!-- 中間金屬造型框 -->
@@ -108,45 +114,97 @@
                         <span class="light_ani2 frame_mid_light_bottom"></span>
                         <span class="light_ani2 frame_mid_light_left"></span>
                     </div>
-                    <!-- 登入表單  -->
-                    <div class="login_container">
-                        <div class="login position-relative">
-                            <!-- 登入表單 -->
-                            <v-form class="" v-slot="{ errors }" @submit="login()">
-                                <div class="mb-2">
-                                    <label for="account" class="form-label">帐号</label>
-                                    <v-field id="account" name="帐号" type="text" class="form-control form_input"
-                                        placeholder="帐号" :class="{ 'is-invalid': errors['帐号'] }" rules="required"
-                                        v-model="form.user.name">
-                                    </v-field>
-                                    <error-message name="帐号" class="invalid-feedback"></error-message>
-                                </div>
-
-                                <div class="mt-2 mb-2">
-                                    <label for="password" class="form-label">密码</label>
-                                    <v-field id="password" name="密码" type="password" class="form-control form_input"
-                                        placeholder="密码" :class="{ 'is-invalid': errors['密码'] }" rules="required"
-                                        v-model="form.user.password"></v-field>
-                                    <error-message name="密码" class="invalid-feedback"></error-message>
-                                </div>
-
-                                <div class="form_login_btn_container text-center">
-                                    <button type="submit" class="btn form_login_btn">
-                                        <img src="./img/07_Register/btn/btn_login.png" alt="登入按鈕">
-                                    </button>
-                                </div>
-                            </v-form>
-                            <!-- 加入會員副標 -->
-                            <div class="login_container_sub_container">
-                                <h2>还不是会员?</h2>
-                                <div class="login_container_sub_btn ">
-                                    <a href="./Siginup.html">
-                                        <img src="./img/07_Register/btn/btn_join.png" alt="加入會員按鈕">
-                                    </a>                            
-                                </div>
-                            </div>
-
-                        </div>
+                    <!-- 拉霸機遊戲圖 -->
+                    <div class=" mid_slot_game_container">
+                        <!-- 第一列 -->
+                        <ul class="  mid_slot_game_list">
+                            <!-- img 換遊戲圖案 由上至下滑動 -->
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_08.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_04.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_06.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_01.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_03.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_09.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_05.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_12.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_02.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_06.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_04.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_08.png" alt="遊戲圖"></li>
+                        </ul>
+                        <!-- 第二列 -->
+                        <ul class="  mid_slot_game_list">
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_02.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_07.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_12.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_09.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_08.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_03.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_01.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_04.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_06.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_02.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_05.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_12.png" alt="遊戲圖"></li>
+                        </ul>
+                        <!-- 第三列 -->
+                        <ul class="  mid_slot_game_list">
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_05.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_09.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_01.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_06.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_04.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_05.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_02.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_12.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_08.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_01.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_09.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_03.png" alt="遊戲圖"></li>
+                        </ul>
+                        <!-- 第四列 -->
+                        <ul class="  mid_slot_game_list">
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_10.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_03.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_11.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_01.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_06.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_05.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_12.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_03.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_02.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_11.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_07.png" alt="遊戲圖"></li>
+                            <li><img src="./img/01_Lobby/game_icon/img_sloticon_10.png" alt="遊戲圖"></li>
+                        </ul>
+                    </div>
+                    <!-- 底部選單按鈕 -->
+                    <div class="bottom_nav_container">
+                        <nav class="bottom_nav_list_container d-grid">
+                            <ul class="bottom_nav_list">
+                                <!-- 按鈕 -->
+                                <li>
+                                    <a href="#">
+                                        <img class="img*fluid" src="./img/01_Lobby/btn/btn_games.png" alt="選擇遊戲按鈕">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./Member.html">
+                                        <img class="img*fluid" src="./img/01_Lobby/btn/btn_member.png" alt="會員中心按鈕">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./News.html">
+                                        <img class="img*fluid" src="./img/01_Lobby/btn/btn_events.png" alt="最新活動按鈕">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="./Service.html">
+                                        <img class="img*fluid" src="./img/01_Lobby/btn/btn_service.png" alt="聯絡客服按鈕">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <!-- footer -->
@@ -171,7 +229,8 @@
                         </div>
                         <!-- 底部遊戲機台圖 -->
                         <div class="frame_container_bottom">
-                            <img src="./img/01_Lobby/img_slotmachine_bottom.png" alt="完整機台外框圖">
+                            <img src="./img/01_Lobby/img_slotmachine_bottom.png"
+                                alt="完整機台外框圖">
                         </div>
                         <!-- 光暈動畫 -->
                         <div class="frame_bottom_light position-absolute">

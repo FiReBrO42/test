@@ -131,7 +131,7 @@ Vue.createApp({
       window.location = '../Login.html'
     },
     login() {
-      window.location = '../Lobby.html'
+      window.location = '../index.html'
     },
     // 規則
     isPhone(value) {
@@ -165,7 +165,7 @@ Vue.createApp({
             } */
     },
     enterGame() {
-      window.location = '../Lobby.html'
+      window.location = '../index.html'
     },
     filterMachine(txt) {
       this.itemProduct = []
