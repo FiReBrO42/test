@@ -67,7 +67,7 @@
                                 <!-- all.js 模擬資料 渲染-->
                                 <template v-for="(item, index) in itemProduct" :key="index">
                                     <li class="position-relative" :class="{ active : item.category === 'gaming'}">
-                                        <a href="item.link">
+                                        <a :href="item.link">
                                             <img :src="item.imageUrl" :alt="item.imageAlt">
                                             <div class="selectMachine_game_sub">
                                                 <p class="selectMachine_game_sub_state"
