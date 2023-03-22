@@ -1,512 +1,183 @@
 <!DOCTYPE html>
-<html lang="zh-hant-tw">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" >
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>TOP TIME</title>
-    <!-- CSS slick 輪播圖 -->
-    <link rel="stylesheet" href="./css/slick.css"/>
-    <link rel="stylesheet" href="./css/slick-theme.css">
-    <!-- CSS fancybox -->
-    <link rel="stylesheet" href="./css/fancybox.css"/>
-    <!-- CSS swiper -->
-    <link rel="stylesheet" href="./css/swiper-bundle.min.css">
-    <!-- 自訂意CSS-->
-    <link rel="stylesheet" href="./css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/all.css">
 </head>
-<body >
-    <header id="top_header" class="top_header"><!-- menu -->
-        <nav id="ham-menu" class="top_ham_menu_nav js-ham_menu_ani"><!-- ham-menu -->
-            <div class="top_ham_menu_nav_sub_wrapper">
-                <ul class="top_ham_menu_nav_sub top_ham_menu_nav_sub_hide">
-                    <li class="top_ham_menu_nav_sub_list">
-                        <a id="about" href="./about.html">品牌</a> 
-                    </li>
-                    <li class="top_ham_menu_nav_sub_list">
-                        <a id="Calendar" href="./calendar.html">賽事</a> 
-                    </li>
-                    <li class="top_ham_menu_nav_sub_list">
-                        <a id="media" href="./media.html">媒體</a> 
-                    </li>
-                    <li class="top_ham_menu_nav_sub_list">
-                        <a id="news" href="./news.html">消息</a> 
-                    </li>
-                </ul>
-            </div>
-            <div class="top_ham_menu_link_wrapper"> <!-- ham-menu socail icon-->
-                <a href="#" class="top_ham_menu_link">
-                    <ion-icon name="logo-instagram" class="top_ham_menu_link_icon"></ion-icon>
-                </a>
-                
-                <a href="#" class="top_ham_menu_link">
-                    <svg class="top_ham_menu_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
-                        <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
-                    </svg>
-                </a>
-            </div>
-        </nav>
-        <div class="top_header_logo_wrapper"><!-- LOGO -->
-            <a href="./index.html" class="top_header_logo_link">
-                <h1 class="top_header_logo">
-                    <img src="./img/svg/icon-logo.svg" alt="LOGO">
-                </h1>
-            </a>
-        </div>
-        <nav id="main-menu" class="top_header_menu_wrapper" ><!-- 主要menu -->
-            <ul class="top_header_menu_list_Wrapper">
-                <li class="top_header_menu_list">
-                    <a href="./about.html" class="active-trail_1">品牌</a>
-                </li>
-                <li class="top_header_menu_list">
-                    <a href="./calendar.html" class="active-trail_2 ">賽事</a>
-                </li>
-                <li class="top_header_menu_list">
-                    <a href="./media.html" class="active-trail_3 ">媒體</a>
-                </li>
-                <li class="top_header_menu_list">
-                    <a href="./news.html" class="active-trail_4 active">消息</a><!-- actvie 亮點 -->
-                </li>
-            </ul>
-        </nav>
-        <div class="top_header_link_wrapper"><!-- 社群連結 -->
-            <a href="#" class="top_header_link">
-                <ion-icon name="logo-instagram" class="top_header_link_icon"></ion-icon>
-            </a>
-           
-            <a href="https://www.facebook.com/TopTime.Racing" class="top_header_link">
-                <svg class="top_header_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
-                    <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
-                </svg>
-            </a>
-        </div>
-        <div  class="top_header_ham_menu_btn_wrapper "  id="ham-menu-btn"><!-- ham-menu switch btn -->
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
 
-    </header>
-    <main id="swup" class="transition-fade">
-        <section class="news_1">
-            <div class="news_1_center">
-                <div class="news_1_title_wrapper">
-                    <h2 class="news_1_title">news</h2><!-- 標體 -->
-                </div>
-                <ul class="news_1_contain_wrapper"><!-- 組容器 -->
-                    <li class="news_1_contain"><!-- 第一組 -->
-                        <a href="./news-1.html"><!-- 連結 -->
-                            <figure class="news_1_contain_img_wrapper"><!-- 圖片 -->
-                                <img src="./img/news/news_img01.jpg" alt="news_img01.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article"><!-- 內文 -->
-                            <p class="news_1_contain_article_txt">04. July 2022</p>
-                            <h2 class="news_1_contain_article_title">Strong weekend by Vesti</h2><!-- 標題 -->
-                            <p class="news_1_contain_article_sub">"The second solid weekend in a row"! This was Danish journalist Jonas Hüttel's...</p>
-                            <div class="news_1_link">
-                                <a href="./news-1.html">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper"><!-- hover按鈕 -->
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第二組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img02.jpg" alt="news_img02.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">13. June 2022</p>
-                            <h2 class="news_1_contain_article_title">VESTI TAKES HIS FIRST F2 VICTORY</h2>
-                            <p class="news_1_contain_article_sub">Since I signed my F2 contract, I have been looking forward to drive in Baku!...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第三組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img03.jpg" alt="news_img03.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">30. May 2022</p>
-                            <h2 class="news_1_contain_article_title">MISTAKE IN QUALIFYING COSTING VESTI DEARLY IN MONACO</h2>
-                            <p class="news_1_contain_article_sub">A week full of contrasts to say the least. Making the podium in Barcelona last...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第四組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img04.jpg" alt="news_img04.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">22. May 2022</p>
-                            <h2 class="news_1_contain_article_title">VESTI TAKES THE PODIUM IN BARCELONA</h2>
-                            <p class="news_1_contain_article_sub">"I'm so happy". An immediate reaction from Vesti on top of Friday's qualifying....</p>
-                            <div class="news_1_link">
-                                <a href="./news-1.html">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第五組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img05.jpg" alt="news_img05.jpg">
-                            </figure>
-                            </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">25. April 2022</p>
-                            <h2 class="news_1_contain_article_title">6th place for vesti at imola</h2>
-                            <p class="news_1_contain_article_sub">Prior to Friday's qualifying at Italian Imola, there was some speculation as to...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第六組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img06.jpg" alt="news/news_img06.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">28. March 2022</p>
-                            <h2 class="news_1_contain_article_title">ANOTHER TOUGH WEEKEND FOR VESTI</h2>
-                            <p class="news_1_contain_article_sub">The second round of FIA F2 was far from the weekend that was to make up for...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第七組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img07.jpg" alt="news_img07.jpg">
-                            </figure>
-                            </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">21. March 2022</p>
-                            <h2 class="news_1_contain_article_title">GREAT CAR - LOST OPPORTUNITY</h2>
-                            <p class="news_1_contain_article_sub">This year's debut for Frederik Vesti in F2 at the French ART GP on the Bahrain...</p>
-                            <div class="news_1_link">
-                                <a href="./news-1.html">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第八組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img08.jpg" alt="news_img08.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">18. February 2022</p>
-                            <h2 class="news_1_contain_article_title">Official launch of the new Mercedes F1 car - W13</h2>
-                            <p class="news_1_contain_article_sub">Two incredible and unforgettable days for Vesti!Today Fred was presented...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="news_1_contain"><!-- 第九組 -->
-                        <a href="./news-1.html">
-                            <figure class="news_1_contain_img_wrapper">
-                                <img src="./img/news/news_img09.jpg" alt="news_img09.jpg">
-                            </figure>
-                        </a>
-                        <div class="news_1_contain_article">
-                            <p class="news_1_contain_article_txt">04. February 2022</p>
-                            <h2 class="news_1_contain_article_title">Eulogy</h2>
-                            <p class="news_1_contain_article_sub">Eulogy by Frederik and his manager over the untimely and tragic death of...</p>
-                            <div class="news_1_link">
-                                <a href="">
-                                    <p class="news_1_link_txt">
-                                        Read more 
-                                    </p>
-                                    <div class="btn_arrow_contain_icon_wrapper">
-                                        <svg class="btn_arrow_contain_icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.1924 9.07107L12.1214 2L11.0295 4.18376C10.837 4.56875 10.9124 5.03372 11.2168 5.33808L14.9498 9.07107C16.1214 10.2426 18.0209 10.2426 19.1924 9.07107ZM12.1838 20.7696L10 19.6777L17.7782 11.8996C18.9497 10.728 20.8492 10.728 22.0208 11.8996L13.3381 20.5823C13.0337 20.8867 12.5687 20.9621 12.1838 20.7696Z" fill="#D71718"/>
-                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.1924 9.07107L3.12134 2L2.02946 4.18376C1.83696 4.56875 1.91242 5.03372 2.21678 5.33808L5.94976 9.07107C7.12134 10.2426 9.02083 10.2426 10.1924 9.07107ZM3.18376 20.7696L1 19.6777L8.77818 11.8996C9.94975 10.728 11.8492 10.728 13.0208 11.8996L4.33808 20.5823C4.03372 20.8867 3.56875 20.9621 3.18376 20.7696Z" fill="#D71718"/>
-                                        </svg>  
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="about_5"><!-- 無限輪播圖 -->
-            <ul class="about_5_list_wrapper">
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img01.png" alt="slick_2_img01.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img02.png" alt="slick_2_img02.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img03.png" alt="slick_2_img03.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img04.png" alt="slick_2_img04.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img05.png" alt="slick_2_img05.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img06.png" alt="slick_2_img06.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img07.png" alt="slick_2_img07.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img08.png" alt="slick_2_img08.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img09.png" alt="slick_2_img09.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img10.png" alt="slick_2_img10.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img11.png" alt="slick_2_img11.png">
-                    </figure>
-                </li>
-                <li class="about_5_list">
-                    <figure class="about_5_list_img_wrapper">
-                        <img class="about_5_list_img" src="./img/slick2/slick_2_img12.png" alt="slick_2_img12.png">
-                    </figure>
-                </li>
-        </section>
-    </main>
-    <footer class="home_footer">
-        <div class="home_footer_center_top">
-            <div class="home_footer_top">
-                <figure class="home_footer_top_bg">
-                    <img src="./img/svg/v-shape.svg" alt="v-shape.svg">
-                </figure>
-                <div class="home_footer_logo_wrapper">
-                    <a href="./index.html">
-                        <figure class="home_footer_logo_img_wrapper">
-                                <img class="home_footer_logo" src="./img/svg/icon-footer_logo.svg" alt="icon-footer_logo.svg">
-                        </figure>
-                    </a>
-                </div>
-                <div class="home_footer_center">
-                    <div class="home_footer_contain_wrapper_1">
-                        <h2 class="home_footer_contain_title">menu</h2>
-                        <ul class="home_footer_contain_list_wrapper">
-                            <li class="home_footer_contain_list">
-                                <a href="./about.html">
-                                    品牌
-                                </a>
-                            </li>
-                            <li class="home_footer_contain_list">
-                                <a href="./calendar.html">
-                                    賽事
-                                </a>
-                            </li>
-                            <li class="home_footer_contain_list">
-                                <a href="./media.html">
-                                    媒體
-                                </a>
-                            </li>
-                            <li class="home_footer_contain_list">
-                                <a href="./news.html">
-                                    消息
-                                </a>
-                            </li>
-                        </ul>
+<body>
+    <div id="app">
+        <main class="w-100 h-auto d-grid">
+            <!-- 中間顯示圖 -->
+            <div class="main_contain position-relative">
+                <!-- header -->
+                <header class="main_header position-relative">
+                    <!-- LOGO底圖 -->
+                    <div class="main_contain_top d-grid position-relative">
+                        <img src="./img/01_Lobby/img_logo.png" alt="Logo圖">
                     </div>
-                    <div class="home_footer_contain_wrapper_2">
-                        <h2 class="home_footer_contain_title"></h2>
-                        <ul class="home_footer_contain_list_wrapper">
-                            <li class="home_footer_contain_list">
-                                
-                            </li>
-                        </ul>
+                    <!-- 紫色外框 -->
+                    <img class="frame_container_top" src="./img/01_Lobby/img_slotmachine_top.png" alt="完整機台外框圖">
+                    <!-- 光暈動畫 -->
+                    <div class="frame_top_light position-absolute">
+                        <span class="light_ani frame_top_light_top"></span>
+                        <span class="light_ani frame_top_light_right"></span>
+                        <span class="light_ani frame_top_light_bottom"></span>
+                        <span class="light_ani frame_top_light_left"></span>
+                    </div>
+                    <!-- 按鈕 -->
+                    <div class="top_banner_ham_container">
+                        <!-- 更改連結去 all.js 更改該函式 -->
+                        <div class="top_banner_btn_ham btn_ham " @click="toMenu"></div>
+                        <div class="top_banner_btn_logout btn_return " @click="returnBack"></div>
+                    </div>
+                </header>
+                <!-- 主要內容區 -->
+                <div class="main_contain_mid position-relative">
+                    <!-- 金色外框 -->
+                    <div class="main_contain_mid_deco">
+                        <img src="./img/01_Lobby/img_goldframe.png" alt="中間金框">
+                    </div>
+                    <!-- 頂部區 -->
+                    <div class="mid_publish_container col position-relative ">
+                        <!-- 公告輪播圖 -->
+                        <div class="mid_publish d-grid">
+                            <img class="img-fluid" src="./img/01_Lobby/img_publish.png" alt="公告背景">
+                            <div class="swiper mid_publish_text_container">
+                                <div class="swiper-wrapper mid_publish_list">
+                                    <!-- 由此新增項目 --><!-- 1. -->
+                                    <div class="swiper-slide">
+                                        <h2>1.這裡是公告內容區</h2><!-- 內容 -->
+                                    </div>
+                                    <!-- 2. -->
+                                    <div class="swiper-slide">
+                                        <h2>2.這裡是公告內容區</h2>
+                                    </div>
+                                    <!-- 3. -->
+                                    <div class="swiper-slide">
+                                        <h2>3.這裡是公告內容區</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 背景輪播圖 -->
+                        <div class="mid_publish_carousel">
+                            <!-- 底部背景圖，撐高避免破圖-->
+                            <img class="img-fluid" src="./img/01_Lobby/img_fortuneruler.jpg" alt="輪播圖">
+                            <div class="swiperCarousel ">
+                                <div class="swiper-wrapper mid_publish_list">
+                                    <!-- 有此新增項目 --><!-- 1. -->
+                                    <div class="swiper-slide">
+                                        <img class="img-fluid" src="./img/01_Lobby/img_fortuneruler.jpg" alt="輪播圖">
+                                    </div>
+                                    <!-- 2. -->
+                                    <div class="swiper-slide">
+                                        <img class="img-fluid" src="./img/01_Lobby/img_fortuneruler.jpg" alt="輪播圖">
+                                    </div>
+                                    <!-- 3. -->
+                                    <div class="swiper-slide">
+                                        <img class="img-fluid" src="./img/01_Lobby/img_fortuneruler.jpg" alt="輪播圖">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 中下背景圖 -->
+                    <div class="down_background_container d-grid position-relative">
+                        <!-- 背景圖 -->
+                        <img class="img-fluid" src="./img/03_Event/img_eventsbackground.jpg" alt="活動背景圖">
+                    </div>
+                    <!-- 中間金屬造型框 -->
+                    <img class="frame_container_mid" src="./img/01_Lobby/img_slotmachine_mid.png" alt="完整機台外框圖">
+                    <!-- 光暈動畫 -->
+                    <div class="frame_mid_light position-absolute">
+                        <span class="light_ani2 frame_mid_light_top"></span>
+                        <span class="light_ani2 frame_mid_light_right"></span>
+                        <span class="light_ani2 frame_mid_light_bottom"></span>
+                        <span class="light_ani2 frame_mid_light_left"></span>
+                    </div>
+                    <!-- 最新公告  -->
+                    <div class="news_popup_container">
+                        <!-- 公告標題 -->
+                        <img class="news_container_title" src="./img/03_Event/img_events.png" alt="最新活動標題">
+                        <!-- 公告文 -->
+                        <div class="news_popup position-relative">
+                            <ul class="news_popup_list_container">
+                                <news-list></news-list>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="home_footer_right">
-                    <h2 class="home_footer_right_title">socail</h2>
-                    <a href="#" class="home_footer_right_link">
-                        <ion-icon name="logo-instagram" class="home_footer_right_link_icon"></ion-icon>
-                        <p>@...</p>
-                    </a>
-                    
-                    <a href="https://www.facebook.com/TopTime.Racing" class="home_footer_right_link">
-                        <svg class="home_footer_right_link_icon"  fill="#D71718" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    
-                            <path d="M32,11h5c0.552,0,1-0.448,1-1V3.263c0-0.524-0.403-0.96-0.925-0.997C35.484,2.153,32.376,2,30.141,2C24,2,20,5.68,20,12.368 V19h-7c-0.552,0-1,0.448-1,1v7c0,0.552,0.448,1,1,1h7v19c0,0.552,0.448,1,1,1h7c0.552,0,1-0.448,1-1V28h7.222 c0.51,0,0.938-0.383,0.994-0.89l0.778-7C38.06,19.518,37.596,19,37,19h-8v-5C29,12.343,30.343,11,32,11z"/>
-                        </svg>
-                        <p>@TopTime.Racing</p>
-                    </a>
-                </div>
+                <!-- footer -->
+                <footer class="footer_frame">
+                    <div class="frame_container_bottom_container position-relative">
+                        <!-- LOGO跑馬燈 無限循環圖-->
+                        <div class="swiperSlotmachine_container">
+                            <div class="swiperSlotmachine ">
+                                <div class="swiper-wrapper mid_publish_list">
+                                    <!-- 循環圖1 -->
+                                    <div class="swiper-slide">
+                                        <img src="./img/01_Lobby/img_slotmachine_bottom_logo.png" alt="機台Logo跑馬燈">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/01_Lobby/img_slotmachine_bottom_logo.png" alt="機台Logo跑馬燈">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="./img/01_Lobby/img_slotmachine_bottom_logo.png" alt="機台Logo跑馬燈">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 底部遊戲機台圖 -->
+                        <div class="frame_container_bottom">
+                            <img src="./img/01_Lobby/img_slotmachine_bottom.png"
+                                alt="完整機台外框圖">
+                        </div>
+                        <!-- 光暈動畫 -->
+                        <div class="frame_bottom_light position-absolute">
+                            <span class="light_ani3 frame_bottom_light_top"></span>
+                            <span class="light_ani3 frame_bottom_light_right"></span>
+                            <span class="light_ani3 frame_bottom_light_right2"></span>
+                            <span class="light_ani3 frame_bottom_light_bottom"></span>
+                            <span class="light_ani3 frame_bottom_light_bottom2"></span>
+                            <span class="light_ani3 frame_bottom_light_bottom3"></span>
+                            <span class="light_ani3 frame_bottom_light_left"></span>
+                            <span class="light_ani3 frame_bottom_light_left2"></span>
+                        </div>
+                    </div>
+                </footer>
             </div>
-        </div>
-        <div class="home_footer_bottom">
-            <div class="home_footer_bottom_left_wrapper">
-                <small>Copyright2022 &copy; by TOP TIME - All rights reserved</small>
-            </div>
-            <div class="home_footer_bottom_right_wrapper">
-                <p class="home_footer_bottom_right_txt">
-                    </p>
-                <a href="#" class="home_footer_bottom_right_link">
-                    <figure class="home_footer_bottom_right_img_wrapper">
-                        
-                    </figure>
-                </a>
-            </div>
-        </div>
-    </footer>
-    <!-- jQuery原生碼 CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- ionicon -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- JS smooth 平滑滾動 -->
-    <script src="./js/jquery.nicescroll.js"></script>
-    <!-- JS slick 輪播圖 -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- JS swiper -->
-    <script src="./js/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView : 3.333,
-            slidesPerGroup : 1,
-            initialSlide: 4,
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
+        </main>
+    </div>
 
-            breakpoints: {
-                320: {  
-                    slidesPerView : 1,
-                    slidesPerGroup : 1,
-                    initialSlide: 3,
-                },
-                768: {  
-                    slidesPerView : 2.222,
-                    slidesPerGroup : 1,
-                    initialSlide: 3,
-                },
-                1024: {  
-                    slidesPerView : 3.333,
-                    slidesPerGroup : 1,
-                    initialSlide: 3,
-                }
-            }
-        });
+    <!-- Swiper JS-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- Vue -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <!-- Vue-validate -->
+    <script src="https://unpkg.com/vee-validate@next"></script>
+    <script src="https://unpkg.com/@vee-validate/rules"></script>
+    <script src="https://unpkg.com/@vee-validate/i18n@4.1.0"></script>
+
+    <script src="./js/all.js" type="module">
     </script>
-    <!-- JS fancybox -->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-    <!-- 自定義JS -->
-    <script src="./js/myjs.js"></script>
+
 </body>
+
 </html>
