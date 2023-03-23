@@ -283,8 +283,10 @@
 
 .gameRecord_table {
     &>thead {
-
+        width: 100%;
         &>tr {
+            width: 100%;
+            position: relative;
             color     : $text-color-white;
             text-align: center;
             font-size : 0.9rem;
@@ -292,21 +294,21 @@
             &>th {
                 padding: 5px 4px;
             }
+            &::after {
+                content         : '';
+                position        : absolute;
+                top             : 50%;
+                left            : 50%;
+                z-index         : -1;
+                transform       : translate(-50%, -50%);
+                width           : 100%;
+                height          : 100%;
+                background-image: url(../img/05_Member/img_header.png);
+                border-radius   : 5px 5px 0 0;
+                background-size : contain;
+            }
         }
 
-        &::after {
-            content         : '';
-            position        : absolute;
-            top             : 50%;
-            left            : 50%;
-            z-index         : -1;
-            transform       : translate(-50%, -50%);
-            width           : 100%;
-            height          : 100%;
-            background-image: url(../img/05_Member/img_header.png);
-            border-radius   : 5px 5px 0 0;
-            background-size : cover;
-        }
     }
 
     &>tbody {
