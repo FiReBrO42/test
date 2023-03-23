@@ -1172,22 +1172,12 @@
   color: white;
   text-align: center;
   font-size: 0.9rem;
-}
-.gameRecord_table > thead > tr > th {
-  padding: 5px 4px;
-}
-.gameRecord_table > thead > tr::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
   background-image: url(../img/05_Member/img_header.png);
   border-radius: 5px 5px 0 0;
   background-size: contain;
+}
+.gameRecord_table > thead > tr > th {
+  padding: 5px 4px;
 }
 .gameRecord_table > tbody > tr {
   color: black;
