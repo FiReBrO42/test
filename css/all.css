@@ -1172,13 +1172,16 @@
   color: white;
   text-align: center;
   font-size: 0.9rem;
-  background-image: url(../img/05_Member/img_header.png);
-  border-radius: 5px 5px 0 0;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 .gameRecord_table > thead > tr > th {
   padding: 5px 4px;
+  background-image: linear-gradient(rgb(222, 123, 31), #b3342b);
+}
+.gameRecord_table > thead > tr > th:nth-child(1) {
+  border-radius: 5px 0 0 0;
+}
+.gameRecord_table > thead > tr > th:nth-child(4) {
+  border-radius: 0 5px 0 0;
 }
 .gameRecord_table > tbody > tr {
   color: black;
