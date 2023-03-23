@@ -1175,6 +1175,7 @@
   background-image: url(../img/05_Member/img_header.png);
   border-radius: 5px 5px 0 0;
   background-size: contain;
+  background-repeat: no-repeat;
 }
 .gameRecord_table > thead > tr > th {
   padding: 5px 4px;
