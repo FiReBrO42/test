@@ -1121,10 +1121,12 @@
 .gameRecord_top_input {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 257.75px;
 }
 .gameRecord_top_input > p {
   color: rgb(223, 57, 47);
+  margin-top: 5px;
 }
 
 .gameRecord_navBar_list {
@@ -1132,11 +1134,28 @@
   width: 100%;
 }
 .gameRecord_navBar_list > li {
+  position: relative;
   width: 25%;
   margin: 0.8rem 2px;
 }
 .gameRecord_navBar_list > li > button {
   padding: unset;
+}
+.gameRecord_navBar_list > li:hover {
+  cursor: pointer;
+}
+.gameRecord_navBar_list > li:hover::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 60%;
+  height: 0;
+  box-shadow: 0px 0px 11px 11px rgb(255, 238, 131);
+  opacity: 0.4;
+  mix-blend-mode: screen;
 }
 
 .gameRecord_table_container {
