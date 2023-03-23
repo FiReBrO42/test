@@ -37,7 +37,7 @@
                     <!-- 按鈕 -->
                     <div class="top_banner_ham_container">
                         <!-- 更改連結去 all.js 更改該函式 -->
-                        <div class="top_banner_btn_ham btn_ham " @click="toMenu"></div>
+                        <div class="top_banner_btn_ham btn_ham "></div>
                         <div class="top_banner_btn_logout btn_return " @click="returnBack"></div>
                     </div>
                 </header>
@@ -95,7 +95,7 @@
                     <div class="down_background_container d-grid position-relative">
                         <!-- 背景圖 -->
                         <img class="img-fluid" src="./img/07_Register/img_loginbackground.jpg" alt="登入背景圖">
-                        <div >
+                        <div>
                             <img src="./img/07_Register/img_login.png" alt="會員登入標題">
                         </div>
                     </div>
@@ -113,6 +113,7 @@
                         <div class="login position-relative">
                             <!-- 登入表單 -->
                             <v-form class="" v-slot="{ errors }" @submit="login()">
+                                <!-- 帳號input -->
                                 <div class="mb-2">
                                     <label for="account" class="form-label">帐号</label>
                                     <v-field id="account" name="帐号" type="text" class="form-control form_input"
@@ -121,7 +122,7 @@
                                     </v-field>
                                     <error-message name="帐号" class="invalid-feedback"></error-message>
                                 </div>
-
+                                <!-- 密碼input -->
                                 <div class="mt-2 mb-2">
                                     <label for="password" class="form-label">密码</label>
                                     <v-field id="password" name="密码" type="password" class="form-control form_input"
@@ -129,7 +130,7 @@
                                         v-model="form.user.password"></v-field>
                                     <error-message name="密码" class="invalid-feedback"></error-message>
                                 </div>
-
+                                <!-- 登入按鈕 -->
                                 <div class="form_login_btn_container text-center">
                                     <button type="submit" class="btn form_login_btn">
                                         <img src="./img/07_Register/btn/btn_login.png" alt="登入按鈕">
@@ -139,13 +140,13 @@
                             <!-- 加入會員副標 -->
                             <div class="login_container_sub_container">
                                 <h2>还不是会员?</h2>
+                                <!-- 轉址 -->
                                 <div class="login_container_sub_btn ">
                                     <a href="./siginup.html">
                                         <img src="./img/07_Register/btn/btn_join.png" alt="加入會員按鈕">
-                                    </a>                            
+                                    </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

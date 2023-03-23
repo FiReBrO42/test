@@ -66,6 +66,7 @@
                             <ul class="selectMachine_top_list_container">
                                 <!-- all.js 模擬資料 渲染-->
                                 <template v-for="(item, index) in itemProduct" :key="index">
+                                    <!-- 判斷是否被點選-->
                                     <li class="position-relative" :class="{ active : item.category === 'gaming'}">
                                         <a :href="item.link">
                                             <img :src="item.imageUrl" :alt="item.imageAlt">
@@ -102,6 +103,8 @@
                             -->
                             </ul>
                         </div>
+                        
+                        <!-- 此部分的圖片的狀態需要更換，目前只有給一種狀態 -->
                         <div class="selectMachine_bottom d-grid">
                             <ul class="selectMachine_bottom_lsit_container">
                                 <!-- 透過點擊送出涵式，來篩選資料 -->

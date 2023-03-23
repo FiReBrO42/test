@@ -114,13 +114,16 @@
                             <ul class="menu_bottom_list_container">
                                 <!-- 遊戲中 -->
                                 <li>
+                                    <!-- 展開 按鈕 -->
                                     <div class="menu_game_btn_container position-relative"
                                         @click="menuBtnOn( 'gaming' )">
                                         <img src="./img/02_Menu/btn/btn_ingame.png" alt="遊戲中機台按鈕">
+                                        <!-- 根據資料確認是否點選開啟 -->
                                         <div class="menu_game_btn_icon" :class="{ active: menuBtnList.gaming.active }">
                                             <img src="./img/img_switch_open.png" alt="切換開啟按鈕">
                                         </div>
                                     </div>
+                                    <!-- 內容 -->
                                     <div class="menu_game_list_container"
                                         :class="{ active: menuBtnList.gaming.active }">
                                         <ul class="menu_game_list">
@@ -160,13 +163,16 @@
                                 </li>
                                 <!-- 保留 -->
                                 <li>
+                                    <!-- 展開 按鈕 -->
                                     <div class="menu_game_btn_container position-relative"
                                         @click="menuBtnOn( 'reserve' )">
                                         <img src="./img/02_Menu/btn/btn_keepgame.png" alt="保留機台按鈕">
+                                        <!-- 根據資料確認是否點選開啟 -->
                                         <div class="menu_game_btn_icon" :class="{ active: menuBtnList.reserve.active }">
                                             <img src="./img/img_switch_open.png" alt="切換開啟按鈕">
                                         </div>
                                     </div>
+                                    <!-- 內容 -->
                                     <div class="menu_game_list_container"
                                         :class="{ active: menuBtnList.reserve.active }">
                                         <ul class="menu_game_list">
@@ -188,13 +194,16 @@
                                 </li>
                                 <!-- 收藏 -->
                                 <li>
+                                    <!-- 展開 按鈕 -->
                                     <div class="menu_game_btn_container position-relative"
                                         @click="menuBtnOn( 'collect' )">
                                         <img src="./img/02_Menu/btn/btn_favoritegame.png" alt="收藏機台按鈕">
+                                        <!-- 根據資料確認是否點選開啟 -->
                                         <div class="menu_game_btn_icon" :class="{ active: menuBtnList.collect.active }">
                                             <img src="./img/img_switch_open.png" alt="切換開啟按鈕">
                                         </div>
                                     </div>
+                                    <!-- 內容 -->
                                     <div class="menu_game_list_container"
                                         :class="{ active: menuBtnList.collect.active }">
                                         <ul class="menu_game_list">

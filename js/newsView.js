@@ -4,13 +4,10 @@ export default {
             <!-- 標題 -->
             <div class="news_popup_list_title">
                 <h2>{{ item.title }}</h2>
-                <!-- icon -->
+                <!-- icon  根據active來展開關閉-->
                 <button class="btn btn-warning btn_news_popup" 
                 :class="{ active: item.active }" 
                 @click="newsPopupOn( index )">﹀</button>
-                <!-- <figure>
-                    <svg></svg>
-                </figure> -->
             </div>
             <!-- 內文 -->
             <div class="news_popup_list_content" :class="{ active: item.active }">

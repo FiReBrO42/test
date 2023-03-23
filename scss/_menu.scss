@@ -5,6 +5,8 @@
     z-index: 1000;
     width: 100%;height: 94.5%;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
 .meun_top {
     display: flex;flex-direction: column;
@@ -17,6 +19,7 @@
     width: 100%;
     height: auto;
     margin-bottom: 0.5rem;
+    z-index: -1;
 
     & img {
         width: 64%;height: 100%;

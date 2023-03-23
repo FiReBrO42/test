@@ -1,5 +1,7 @@
 export default {
-    template:`<v-form class="" v-slot="{ errors }" @submit="siginUp()">
+    /* HTML資料 */
+    template:`
+    <v-form class="" v-slot="{ errors }" @submit="siginUp()">
     <div class="mb-1">
         <label for="account" class="form-label">帐号</label>
         <v-field id="account" name="帐号" type="text" class="form-control form_input"
@@ -62,6 +64,8 @@ export default {
         </button>
     </div>
 </v-form>`,
+
+    /* 資料儲存地方 */
     data() {
         return {
             form: {
@@ -73,15 +77,18 @@ export default {
     },
     methods: {
         siginUp() {
-
+            /* 輸入的驗證碼 與 隨機驗證碼比對  */
             if(this.userVerifyCode !== this.verifyCode){
+                /* 當不同時彈出視窗 */
               alert('驗證碼錯誤')
               return
             }
             else{
+                /* 通過時 轉址 */
               window.location = '../Login.html'
             }
           },
+
             // 驗證碼
         drawCaptcha() {
             const show_num = [];

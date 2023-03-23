@@ -94,6 +94,7 @@ Vue.createApp({
         gaming: false
       },
       memberList: {
+        changePassword:false,
         profile: true,
         storedRecord: false,
         gameRecord: false,
@@ -196,33 +197,53 @@ Vue.createApp({
       }
     },
     switchMemberList(name) {
+      const lis = document.querySelectorAll('.member_content_list_container > li');
       switch (name) {
+        case 'changePassword':
+          this.memberList.changePassword=true
+          this.memberList.profile = false
+          this.memberList.storedRecord = false
+          this.memberList.gameRecord = false
+          this.memberList.convertRecord = false
+          lis.forEach(li => li.style.transform = 'translateX(0%)');
+          break;
         case 'profile':
+          this.memberList.changePassword=false
           this.memberList.profile = true
           this.memberList.storedRecord = false
           this.memberList.gameRecord = false
           this.memberList.convertRecord = false
+          lis.forEach(li => li.style.transform = 'translateX(-100%)');
           break;
         case 'storedRecord':
+          this.memberList.changePassword=false
           this.memberList.profile = false
           this.memberList.storedRecord = true
           this.memberList.gameRecord = false
           this.memberList.convertRecord = false
+          lis.forEach(li => li.style.transform = 'translateX(-200%)');
           break;
         case 'gameRecord':
+          this.memberList.changePassword=false
           this.memberList.profile = false
           this.memberList.storedRecord = false
           this.memberList.gameRecord = true
           this.memberList.convertRecord = false
+          lis.forEach(li => li.style.transform = 'translateX(-300%)');
           break;
         case 'convertRecord':
+          this.memberList.changePassword=false
           this.memberList.profile = false
           this.memberList.storedRecord = false
           this.memberList.gameRecord = false
           this.memberList.convertRecord = true
+          lis.forEach(li => li.style.transform = 'translateX(-400%)');
           break;
       }
-    }
+    },
+    changePasswordBtn() {
+      window.location = './member.html'
+    },
   },
   mounted() {
     swiperJs.methods.swiper()
