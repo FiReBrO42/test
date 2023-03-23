@@ -1132,7 +1132,7 @@
 .gameRecord_top_input > select {
   color: black;
   background-color: white;
-  border-radius: unset;
+  border-radius: 0;
   border: 1px solid black;
 }
 
