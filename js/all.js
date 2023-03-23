@@ -213,7 +213,7 @@ Vue.createApp({
           this.memberList.storedRecord = false
           this.memberList.gameRecord = false
           this.memberList.convertRecord = false
-          lis.forEach(li => li.style.transform = 'translateX(-100%)');
+          lis.forEach(li => li.style.transform = 'translateX(calc(-100% - 6px ))');
           break;
         case 'storedRecord':
           this.memberList.changePassword=false
@@ -221,7 +221,7 @@ Vue.createApp({
           this.memberList.storedRecord = true
           this.memberList.gameRecord = false
           this.memberList.convertRecord = false
-          lis.forEach(li => li.style.transform = 'translateX(-200%)');
+          lis.forEach(li => li.style.transform = 'translateX(calc(-200% - 12px ))');
           break;
         case 'gameRecord':
           this.memberList.changePassword=false
@@ -229,7 +229,7 @@ Vue.createApp({
           this.memberList.storedRecord = false
           this.memberList.gameRecord = true
           this.memberList.convertRecord = false
-          lis.forEach(li => li.style.transform = 'translateX(-300%)');
+          lis.forEach(li => li.style.transform = 'translateX(calc(-300% - 18px ))');
           break;
         case 'convertRecord':
           this.memberList.changePassword=false
@@ -237,7 +237,7 @@ Vue.createApp({
           this.memberList.storedRecord = false
           this.memberList.gameRecord = false
           this.memberList.convertRecord = true
-          lis.forEach(li => li.style.transform = 'translateX(-400%)');
+          lis.forEach(li => li.style.transform = 'translateX(calc(-400% - 24px ))');
           break;
       }
     },
