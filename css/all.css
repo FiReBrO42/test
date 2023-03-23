@@ -1130,6 +1130,13 @@
   margin-top: 5px;
 }
 
+select {
+  color: black;
+  background-color: white;
+  border-radius: unset;
+  border: 1px solid black;
+}
+
 .gameRecord_navBar_list {
   display: flex;
   width: 100%;

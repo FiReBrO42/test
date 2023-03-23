@@ -240,7 +240,12 @@
         margin-top: 5px;
     }
 }
-
+select {
+    color: $text-color-black;
+    background-color: $text-color-white;
+    border-radius: unset;
+    border: 1px solid $text-color-black;
+}
 .gameRecord_navBar_list {
     display: flex;
     width  : 100%;
