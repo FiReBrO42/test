@@ -455,6 +455,14 @@
     }
 }
 
+.gameRecord_table > tbody > tr > td.text-color-green {
+    color: $text-color-green;
+}
+.gameRecord_table > tbody > tr > td.text-color-red {
+    color: $text-color-red;
+}
+
 [v-cloak] {
     display: none;
 }
+
