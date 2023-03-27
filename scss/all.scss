@@ -163,9 +163,10 @@ body {
 }
 .mid_publish_text_container {
     align-items: center;
-    position: absolute;bottom: 0;
+    position: absolute;bottom: 0;left: 50%;
+    transform: translateX(-50%);
     overflow: hidden;
-    width: 85%;height: 100%;
+    width: 90%;height: 100%;
 }
 .mid_publish_list {
     & div {
