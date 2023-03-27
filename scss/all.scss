@@ -65,26 +65,42 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+/* 背景圖更改地方 */
+body {
+    background-image: url(../img/img_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* 如果需要滾動畫面就把高度改為 840.03 反之 100vh */
+@media (max-height:840.03px) {
+    body {
+        height: 840.03px;
+    }
+}
+@media (min-height:840.03px)  {
+    body {
+        height:100vh;
+    }
+}
 /* lobby.html */
 .main_contain {
     width : 375px;
     height: auto;
     margin: auto;
-    background-color: black;
+/*     background-color: black; */
 }
 .main_header {
     padding: 12px;
     border-radius: 16px;
 }
 /* RWD手機 */
-@media (max-width:549px){ 
+@media (max-width:376px){ 
     .main_contain {
         overflow-x: hidden;
     }
 }
 /* RWD大型裝置 */
-@media (min-width:550px){ 
+@media (min-width:376px){ 
     .main_contain {
         overflow-x: unset;
     }
@@ -298,10 +314,11 @@ table {
     width: 103%;height: 556px;
     transform: translate(-50%, -3px);
 }
-.footer_frame {
+.footer_frame {     
     z-index: 10;
     position: relative;top: 0;left: 50%;
     width: 106%;
+    height: 158px;
     transform: translate(-50%,0);
     margin-top: 4px;
 }
@@ -617,4 +634,10 @@ table {
             mix-blend-mode: screen;
         }
     }
+}
+
+.game_videoSource {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

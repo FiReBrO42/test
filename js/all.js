@@ -166,7 +166,7 @@ Vue.createApp({
             } */
     },
     enterGame() {
-      window.location = './index.html'
+      window.location = './gameVideo.html'
     },
     filterMachine(txt) {
       this.itemProduct = []
